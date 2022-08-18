@@ -1,0 +1,30 @@
+.container{
+    display: inline-block;
+    width: 40%;
+    border: darksalmon solid;
+    display:flex;
+    inline-size: min-content;
+}
+
+.section1{
+    background-color: pink;
+    width: calc(20vh - 40px);;   
+    height: 100px;
+   
+    border: solid;
+}
+
+.section2{
+    background-color: pink;
+    width: calc(20vh - 40px);;
+    height: 100px;
+    
+    border: solid;
+}
+.section3{
+    background-color: pink;
+    width: calc(20vh - 40px);;
+    height: 100px;
+   
+    border: solid;
+}

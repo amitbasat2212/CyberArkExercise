@@ -1,0 +1,40 @@
+#parent{
+	background-color: black;
+    display: inline-block;
+    padding: 4px;
+}
+
+.child {
+    background-color: #66320E;
+    width: 90px;
+    height: 90px;
+    margin: 3px;
+}
+
+#child1 {
+	float: right;
+}
+
+#child2{
+  float: right;
+	
+}
+
+#child3 {
+  
+    float: right;
+}
+
+#child4 {
+  float: left;
+ 
+}
+
+#child5{
+   float: left;
+    
+}
+#child6{
+    float: left;
+     
+ }

@@ -1,0 +1,25 @@
+#first{
+    height: 50px;
+    width: 50px;
+    background-color: #1abc9c;
+    display: inline-block;
+    border-style: solid
+}
+#second{
+    height: 50px;
+    width: 50px;
+    background-color: darkorange;
+    display: inline-block;
+    border-style: solid
+}
+
+#container{
+    height: 200px;
+    width: 300px;
+    background-color: lightgray;
+}
+.button{
+    background-color: #16a085;
+    margin-top: 10px;
+    
+}

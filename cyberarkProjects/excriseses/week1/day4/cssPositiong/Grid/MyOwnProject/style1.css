@@ -1,0 +1,81 @@
+#nav-container{
+    display: grid;
+    background-color: blue;
+    grid-template-columns: repeat(2, 1fr);
+    padding-right: 20px;
+    padding-left: 15px;
+    grid-area: h;      
+    margin-left: 10px;
+}
+
+.fotters-item{
+    display: grid;
+    background-color: #00FFFF;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    align-content: center;
+    color: black;
+    height: 100%;
+
+}
+.fotters1-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100px;
+}
+
+
+.main-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.nav-item{
+    display: grid;
+    align-content: center;
+    color: #ecf0f1;
+    height: 100%;
+}
+
+.logo-container{
+    display: grid;
+    justify-content: end;
+} 
+
+
+
+
+
+
+#results-container{
+    display: grid;
+    margin-top: 20px;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+.result{
+    display: grid;
+    height: 500px;
+    background-color: #16a085;
+    text-align: center;
+    align-content: center;
+    border-radius: 4px;
+    
+}
+
+#dogi1{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("https://cdn-thumbs.barewalls.com/cowboy-dog_bwc851454.jpg");
+}
+
+#dogi2{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("https://live.staticflickr.com/1056/1196059007_b3ee0cdb88_b.jpg");
+}
+
+
+

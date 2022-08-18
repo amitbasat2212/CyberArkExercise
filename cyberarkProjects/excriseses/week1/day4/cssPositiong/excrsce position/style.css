@@ -1,0 +1,56 @@
+/* #example{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin-left: 100px;
+    margin-top: 100px;
+    padding-top:100px ;
+  }
+
+  #example1{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin-left: 100px;
+    padding-left: 100px;
+    
+  } */
+
+#parent{
+	background-color: red;
+	width: 300px;
+	height: 300px;
+  position: relative;
+}
+
+.child {
+	width: 100px;
+	height: 100px;
+  position: absolute;
+}
+
+#child1 {
+	background-color: blue;
+}
+
+#child2{
+  right: 0;
+	background-color: green;
+}
+
+#child3 {
+  bottom: 0;
+  background-color: gold;
+}
+
+#child4 {
+  bottom : 0;
+  right: 0;
+  background-color: purple;
+}
+
+#child5{
+    bottom : 33.3%;
+    right: 33.3%;
+    background-color: darkcyan;
+}

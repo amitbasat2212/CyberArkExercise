@@ -1,0 +1,16 @@
+body{
+    background-image: url('https://d.newsweek.com/en/full/1970093/labrador-puppy.jpg');
+    background-repeat: no-repeat
+}
+
+
+.dogs{
+    color:rgba(0, 0, 0, 0.5);
+}
+
+.container{
+    background-color: purple;
+    height: 70px;
+    width: 300px;
+    color:rgba(0, 0, 0, 1);
+}

@@ -91,8 +91,13 @@ const push = function () {
   displayData1(alert, logData, "I like to party")
 
 
+  //Exercise 4
 
-  //Exercise 4 - Arrow Functions
+  const sum=(num1,num2,num3)=>num1+num2+num3
+  console.log(sum(1,2,3))
+
+
+  //Exercise 6 - Arrow Functions
 
   const determineWeather = temp => {
     if(temp > 25){
@@ -105,6 +110,19 @@ const push = function () {
 
   commentOnWeather(30) //returns "It's hot"
   commentOnWeather(22) //returns "It's cold"
+
+
+
+  //excrcise 5 
+
+const capitalize =(name)=>{
+    return name.charAt(0).toUpperCase()+ name.slice(1).toLowerCase()
+}
+console.log(capitalize("bOb")) // returns Bob
+capitalize("TAYLOR") // returns Taylor
+capitalize("feliSHIA") // returns Felishia
+
+
 
   
 

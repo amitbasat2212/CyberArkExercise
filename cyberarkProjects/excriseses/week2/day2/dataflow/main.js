@@ -11,7 +11,7 @@ posts =[
 function render (){
     $('.all').empty()
     for(let i=0;i<posts.length;i++){
-        let NewDiv = `<div class="all"><div class=posts>${posts[i].name}:</div><div class=text >${posts[i].text}</div></div>`
+        let NewDiv = `<div class="all"><div class="posts">${posts[i].name}:</div><div class="text" >${posts[i].text}</div></div>`
         $('body').append(NewDiv);
     }
 }
@@ -26,9 +26,9 @@ $('button').click(function(){
     $('#my-input2').val("")
 })
 
-// $('body').on('click',".posts",function(event){
-//     console.log(event.target);
-//     //posts.splice()
-// })
+$('body').on('click',".all",function(event){
+    $(event.target).remove();
+       
+})
 
 render();

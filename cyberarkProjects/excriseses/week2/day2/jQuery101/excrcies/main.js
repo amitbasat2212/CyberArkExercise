@@ -74,7 +74,7 @@ const fruits = [
   }
 
 
-  //Extensions - Color Picker
+ 
 
 
 

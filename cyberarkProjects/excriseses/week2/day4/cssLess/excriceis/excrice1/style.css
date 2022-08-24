@@ -1,0 +1,102 @@
+.input_degin,
+.username,
+.password {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  border-radius: 0.2rem;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #ffffff;
+  border: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+  font-size: 18px;
+}
+.theContinaer {
+  width: 500px;
+  height: 500px;
+  box-shadow: 1px 1px 3px #2c3e50;
+  border-radius: 4px;
+  position: relative;
+  background-color: #B42525;
+  margin-top: 1vmax;
+}
+.thepostion,
+.theHeader,
+.hpoalimText,
+.open,
+.username,
+.password,
+#login,
+.fa-bank {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 290px;
+  /* Need a specific value to work */
+}
+.theHeader {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.SeconedContinaer {
+  width: 500px;
+  height: 140px;
+  box-shadow: 1px 1px 3px #2c3e50;
+  border-radius: 4px;
+  position: relative;
+  top: 360px;
+  background-color: #A02021;
+}
+.hpoalimText {
+  bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+}
+.open {
+  top: 10px;
+  width: 400px;
+}
+.username {
+  top: 100px;
+}
+.password {
+  top: 150px;
+}
+#login {
+  top: 240px;
+  width: 100px;
+}
+.fa-bank {
+  top: 20px;
+  left: 350px;
+}
+.buttonDegin,
+.open,
+#login {
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+}

@@ -1,3 +1,6 @@
+
+//function renders the posts and comments to the view 
+//gets the data from twitterdatamodels
 const TwetterRenderModule=()=>{
     const renderPosts =(posts)=>{
         $('#posts').empty();

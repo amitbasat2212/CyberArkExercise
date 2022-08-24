@@ -11,7 +11,7 @@ body{
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 
     "h ."
-    "i b"
+    "i b" 
     "p p"
 }
 
@@ -58,25 +58,45 @@ body{
 }
 
 
-
-/* .delete{
+ .delete{
     cursor: pointer;
     color: #ecf0f1;
-    background-color: #e74c3c;
+    background-color: #f03924;
     display: inline-block;
     padding: 5px;
     border-radius: 3px;
     font-size: 0.8em;
+    margin-top: 10px;
 }
 
-.delete-comment{
+ .delete-comment{
     cursor: pointer;
-    color: #e74c3c;
-} */
+    color: red;
+    margin-top: 10px;
+}  
 
 #input{
     grid-area: i;
     padding: 10px;
     font-size: 1.5vw;
+}
+
+.CommentButton{
+    cursor: pointer;
+    color: #ecf0f1;
+    background-color: #3498db;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+.CommentButton:active{
+    background-color: #62d7f5;
+}
+
+.delete:active{
+    background-color: #e1894a;
 }
 

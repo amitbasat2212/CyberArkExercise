@@ -29,7 +29,7 @@ class Manager{
     }
     
     hireEmployee(name){
-        this.employees.push(new Employee(name,[]));
+        this.employees.push(new Employee(name));
     }
 
     askEmployeesToWork(office){

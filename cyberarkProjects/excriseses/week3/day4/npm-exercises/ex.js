@@ -25,7 +25,7 @@ const { faker } = require('@faker-js/faker');
 const makeHuman=(number)=>{
     let humens=[];
     for(let i=0;i<number;i++){
-        console.log(faker);
+        
         humens.push({           
             Name:faker.name.firstName(),
             avatar: faker.image.avatar(),

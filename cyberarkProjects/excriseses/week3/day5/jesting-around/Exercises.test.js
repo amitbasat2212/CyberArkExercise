@@ -55,7 +55,7 @@ describe('Testing Exercises API',()=>{
     ///exctinsion 
     test("to check how many time push has benn active ", ()=>{
         let excrice1 = new excrice.Exercises();
-        const spy = jest.spyOn(excrice1,'add');
+        const spy = jest.spyOn(Array.prototype,'push');
         const isadd = excrice1.add(4,5);
         expect(spy).toHaveBeenCalled();
        

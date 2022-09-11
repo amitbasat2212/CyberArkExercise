@@ -1,12 +1,12 @@
 const excrice = require('./Exercises')
-
+afterEach(() => {
+    // restore the spy created with spyOn
+    jest.restoreAllMocks();
+  });
 describe('Testing Exercises API',()=>{
-    afterEach(() => {
-        // restore the spy created with spyOn
-        jest.restoreAllMocks();
-      });
+  
     //excrice1
-    test("is even function right way ", ()=>{
+    test("iseven function right way ", ()=>{
         let IsEvenFunc = new excrice.Exercises();
         expect(IsEvenFunc.isEven(2)).toBeTruthy();
         expect(IsEvenFunc.isEven(3)).not.toBeTruthy();        

@@ -190,7 +190,7 @@ def get_5common(line):
      return counts
 
 wordscount = get_5common(line);
-wordscountsorted = sort_orders = sorted(wordscount.items(), key=lambda x: x[1], reverse=True)
+wordscountsorted = sorted(wordscount.items(), key=lambda x: x[1], reverse=True)
 wordscountsorted=wordscountsorted[:5];
 print(wordscountsorted)
   
@@ -207,7 +207,7 @@ print(wordscountsorted)
 
 
 #exctions2
-# from curses.ascii import islower;
+from curses.ascii import islower;
 def isPalindrome(s):
     return s == s[::-1]
 flag = True;

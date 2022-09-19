@@ -21,8 +21,7 @@ const checkIfStartsWithNum = function(str){
   /**
    * should return true if string is all numbers / size 10 / starts with 054
    * HINT : look into ^ , into Ranges [] and sizes {}
-   */   
-   
+   */      
     const regex = /^054[0-9]{7}$/
    
     if(regex.test(str))
@@ -39,7 +38,23 @@ const checkIfStartsWithNum = function(str){
 //  console.log(checkIfEndsWithAt(str1)) //returns false
 //  console.log(checkIfEndsWithAt(str2)) //returns false
 
- console.log(checkIfStartsWithNum(str)) //returns false
- console.log(checkIfStartsWithNum(str3)) //return true
- console.log(checkIfStartsWithNum(str4)) //return false
- console.log(checkIfStartsWithNum(str5)) //return false
+//  console.log(checkIfStartsWithNum(str)) //returns false
+//  console.log(checkIfStartsWithNum(str3)) //return true
+//  console.log(checkIfStartsWithNum(str4)) //return false
+//  console.log(checkIfStartsWithNum(str5)) //return false
+
+
+
+
+//excrice2
+const SearchMatchingRegex=(string)=>{
+    const isMatch=regexArr.some(rx => rx.test(string));
+    print(isMatch)
+}
+
+
+regexArr = [/at/,/a/,/a$/,/^b/]
+
+SearchMatchingRegex("cat") //will return true
+SearchMatchingRegex("bike") //will return true
+SearchMatchingRegex("mouse") //will return false

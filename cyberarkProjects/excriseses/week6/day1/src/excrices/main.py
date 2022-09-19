@@ -62,7 +62,7 @@ async def reduce_by_discount(admin:bool=False):
         for item in store:
             if( item["inventory"]>10):
                 item["price"]/=2;
-                return item;
+                return store;
 
 
 #exctionsion1

@@ -1,28 +1,32 @@
 from fastapi import FastAPI
 import uvicorn
 from fastapi import Request
-import json
-import requests
 from fastapi import Response
 app = FastAPI()
 import re
+
+
+
 words_counter_sum=[
     {"word":"amit","count":1},
-    {"word":"lona","count":1},
+    {"word":"lona","count":3},
     {"word":"momo","count":1}
 ]
 
-def word_ganary(word):
-     without_numbers_word = re.sub("[^0-9]", "",word)
-     without_spicael_characters= my_new_string = re.sub('[^a-zA-Z0-9 \n\.]', '', without_numbers_word)
+
+
+def word_ganary_foramt(word):
+     without_numbers_word = ''.join([i for i in word if not i.isdigit()])
+     without_spicael_characters=re.sub('[^a-zA-Z0-9 \n\.]', '', without_numbers_word)
      word_lower = without_spicael_characters.lower()
      return word_lower;
 
+
+
 def find_word(word):
     try:
-        word_new = word_ganary(word)
+        word_new = word_ganary_foramt(word)
         word_find = list(filter(lambda word_tem:word_tem["word"]==word_new,words_counter_sum ))
-        
         if(word_find):
             return {"word":word,"count":word_find[0]["count"]}
     except KeyError:        
@@ -30,7 +34,8 @@ def find_word(word):
 #excrice2
 @app.get("/word_find/{word}")
 async def word_find(word):
-    return find_word(word);  
+    word_new = word_ganary_foramt(word)
+    return find_word(word_new);  
 
 
 
@@ -39,14 +44,19 @@ async def word_find(word):
 async def words_counter(request: Request):
     respone_word = await request.json();  
     word =respone_word["word"]
-    word_find = list(filter(lambda word_tem:word_tem["word"]==word,words_counter_sum ))
+    word_new = word_ganary_foramt(word)
+    word_find = list(filter(lambda word_tem:word_tem["word"]==word_new,words_counter_sum ))
     if(word_find):
         word_find[0]["count"]+=1
         return word_find
     else:
-        words_counter_sum.append({"word":word,"count":1})
+        words_counter_sum.append({"word":word_new,"count":1})
         return words_counter_sum[len(words_counter_sum)-1]
-   
+
+
+
+
+
 #excrice4
 @app.post('/addCountSentece')
 async def words_counter_sentece(request: Request):
@@ -69,11 +79,14 @@ async def words_counter_sentece(request: Request):
      
   
 
+
+
 #excrice5
 @app.delete('/deleteItem/{word}',status_code=201)
 async def delete_item(word,response: Response):      
    global words_counter_sum;
-   words_without_the_word = list(filter(lambda word_tem:not word_tem["word"]==word,words_counter_sum ))
+   word_new = word_ganary_foramt(word)
+   words_without_the_word = list(filter(lambda word_tem:not word_tem["word"]==word_new,words_counter_sum ))
    if(not words_without_the_word==words_counter_sum):
      words_counter_sum= words_without_the_word;  
      return words_counter_sum;  
@@ -82,10 +95,18 @@ async def delete_item(word,response: Response):
      return {response.status_code,"the word not in the list"}
      
 
-
-
-
 #exctions1
+@app.get("/topPopolur")
+async def get_popolur_word():   
+    maxPricedItem = max(words_counter_sum, key=lambda x:x['count'])
+    return maxPricedItem;
+
+
+@app.get("/sumallwords")
+async def sum_all_words():   
+   sum_words_count = sum([word["count"] for word in words_counter_sum ])
+   the_sum = {"text": "Total count", "count": sum_words_count };
+   return the_sum
 
 
 

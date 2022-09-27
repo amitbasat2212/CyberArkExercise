@@ -102,6 +102,7 @@ async def get_popolur_word():
     return maxPricedItem;
 
 
+#exctions2
 @app.get("/sumallwords")
 async def sum_all_words():   
    sum_words_count = sum([word["count"] for word in words_counter_sum ])

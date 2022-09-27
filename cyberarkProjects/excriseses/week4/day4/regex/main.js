@@ -1,9 +1,9 @@
-const str = "the fat cat hit the rat with a bat"
-const str1 ="bob yelled hello"
-const str2 = "it's fleece was white as snow";
-const str3 = "0542212222";
-const str4 = "054hihihii";
-const str5 = "9542212222";
+// const str = "the fat cat hit the rat with a bat"
+// const str1 ="bob yelled hello"
+// const str2 = "it's fleece was white as snow";
+// const str3 = "0542212222";
+// const str4 = "054hihihii";
+// const str5 = "9542212222";
 
 //Checks if it contains “a” in the string
 const checkIfContainsA = function (str){
@@ -47,14 +47,66 @@ const checkIfStartsWithNum = function(str){
 
 
 //excrice2
+
 const SearchMatchingRegex=(string)=>{
     const isMatch=regexArr.some(rx => rx.test(string));
-    print(isMatch)
+    return isMatch;
 }
 
 
-regexArr = [/at/,/a/,/a$/,/^b/]
 
-SearchMatchingRegex("cat") //will return true
-SearchMatchingRegex("bike") //will return true
-SearchMatchingRegex("mouse") //will return false
+
+const regexArr = [/a/, /b/, /^d/, /e$/]
+const str = "Bike"
+const str1 = "the room is on fire"
+const str2 = "Fergalicious"
+const str3 = "Fox in sheep clothing"
+
+console.log(SearchMatchingRegex(str)) //return true (contains b)
+console.log(SearchMatchingRegex(str1)) //return true (ends with e)
+console.log(SearchMatchingRegex(str2)) //return true (contains a)
+console.log(SearchMatchingRegex(str3)) //return false
+
+
+
+//excrice3
+const emailValidator=(email)=>{
+    let regex = new RegExp('[a-z0-9]+@[a-z]+\.com');
+    return regex.test(email);
+    
+}
+
+
+
+const email1 = "cat@meow.com"
+const email2 = "bad1npuT!@gmail.com"
+const email3 = "meow@gmail.net"
+
+
+
+console.log(emailValidator(email1)) //return true
+console.log(emailValidator(email2)) //return true
+console.log(emailValidator(email3)) //return false
+
+
+
+//excrice4
+const firstURL = "www.workingurl.com"
+const secondURL = "iamabadurl.com"
+const thirdURL = "www.doireallywork.net"
+
+const urlValidator = function(str){
+    var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
+	    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
+	    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // validate OR ip (v4) address
+	    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // validate port and path
+	    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // validate query string
+	    '(\\.com)?$'); // validate fragment locator
+	  return !!urlPattern.test(str);
+}
+
+console.log(urlValidator(firstURL)) //return true
+console.log(urlValidator(secondURL)) //return true
+console.log(urlValidator(thirdURL)) //return false
+
+

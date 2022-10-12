@@ -1,0 +1,588 @@
+
+Movie CRUD
+
+request
+POST http://api.movieapp.com/movies HTTP/1.1
+
+{
+  "title": "lolo movie", 
+  "plot": "about lolo journey to the gallxey", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 200000000, 
+  "genres": Drama
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+ 
+}
+
+response
+HTTP/1.1 201 Created
+Location: /movies/287
+
+{
+  "id":287  
+  "title": "lolo movie", 
+  "plot": "about lolo journey to the gallxey", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 200000000, 
+  "genres": Drama
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+}
+
+
+
+request
+GET http://api.movieapp.com/movies/287 HTTP/1.1
+
+response
+HTTP/1.1 200 OK
+{
+  "id":287  
+  "title": "lolo movie", 
+  "plot": "about lolo journey to the gallxey", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 200000000, 
+  "genres": Drama
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+}
+
+
+
+request
+PUT http://api.movieapp.com/movies/287 HTTP/1.1
+
+{
+  "title": "lolo the new edition", 
+  "plot": "about lolo journy to the mountion insted galaxy", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 200000000, 
+  "genres": Drama
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+ 
+}
+
+response
+HTTP/1.1 200 OK
+Location: /movies/287
+{
+  "id":287  
+  "title": "lolo the new edition", 
+  "plot": "about lolo journy to the mountion insted galaxy", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 200000000, 
+  "genres": Drama
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+}
+
+
+request
+DELETE  http://api.movieapp.com/movies/287 HTTP/1.1
+
+HTTP/1.1 204 No Content 
+
+
+
+Actores 
+ 
+request
+GET http://api.movieapp.com/actors/283 HTTP/1.1
+
+response
+HTTP/1.1 200 OK
+{
+  "id": 283, 
+  "name": "Brad Pitt", 
+  "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+  "birthday": "1963-12-18", 
+  "deathday": null, 
+  "gender": 2, 
+  "popularity": 9.93
+}
+
+request
+PUT http://api.movieapp.com/actors/283 HTTP/1.1
+
+{
+  "name": "Brad Pitt", 
+  "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+  "birthday": "1966-12-20", 
+  "deathday": null, 
+  "gender": 1, 
+  "popularity": 8
+ 
+}
+
+response
+HTTP/1.1 200 OK
+Location: /actors/283
+{
+  "name": "Brad Pitt", 
+  "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+  "birthday": "1966-12-20", 
+  "deathday": null, 
+  "gender": 1, 
+  "popularity": 8
+}
+
+request
+DELETE  http://api.movieapp.com/actors/283 HTTP/1.1
+
+HTTP/1.1 204 No Content 
+
+
+
+
+//Get actors of a specific movie.
+request
+GET http://api.movieapp.com/actors?movieId=192&limit=2&offset=0 HTTP/1.1
+
+response
+HTTP/1.1 200 OK
+[
+    {
+    "movieId":192,   
+    "name": "scarlet jhonson", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1966-12-20", 
+    "deathday": null, 
+    "gender": 1, 
+    "popularity": 8
+    }
+    {
+    "movieId":192,      
+    "name": "Brad Pitt", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1966-12-20", 
+    "deathday": null, 
+    "gender": 1, 
+    "popularity": 8
+    }
+
+]
+
+
+
+//Add an actor to a specific movie.
+//request
+POST http://api.movieapp.com/actors?movieId=192 HTTP/1.1
+{
+    "movieId":192,      
+    "name": "kobo kabana", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1966-12-20", 
+    "deathday": null, 
+    "gender": 1, 
+    "popularity": 8
+}
+ 
+
+
+response
+HTTP/1.1 201 Created
+Location: /actors/144
+
+{
+    "id":144,
+    "movieId":192,      
+    "name": "kobo kabana", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1966-12-20", 
+    "deathday": null, 
+    "gender": 1, 
+    "popularity": 8
+}
+
+
+
+//Remove an actor from a specific movie.
+request
+DELETE  http://api.movieapp.com/actors/144?movieId=192 HTTP/1.1
+
+HTTP/1.1 204 No Content 
+
+
+
+//Get the top 3 stars
+request
+GET http://api.movieapp.com/actors?top=3&movieId=192 HTTP/1.1
+
+response
+HTTP/1.1 200 OK
+[
+    {
+    "movieId":192,   
+    "name": "scarlet jhonson", 
+    "bio": "scarlet jhonson (born December 18, 1963) is…", 
+    "birthday": "1966-12-20", 
+    "deathday": null, 
+    "gender": 1, 
+    "popularity": 8
+    },
+    {
+    "movieId":192,      
+    "name": "Brad Pitt", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1966-12-20", 
+    "deathday": null, 
+    "gender": 1, 
+    "popularity": 8
+    },
+    {
+    "movieId":192,      
+    "name": "albert anstinen", 
+    "bio": "William albert born in 1899", 
+    "birthday": "1967-12-20", 
+    "deathday": null, 
+    "gender": 1, 
+    "popularity": 8
+    }
+
+]
+
+
+//Update a specific movie’s revenue
+request
+PUT http://api.movieapp.com/movies/287 HTTP/1.1
+
+{
+  "title": "lolo the new edition", 
+  "plot": "about lolo journy to the mountion insted galaxy", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 40000, 
+  "genres": Drama
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+ 
+}
+
+
+response
+HTTP/1.1 200 OK
+Location: /movies/287
+{
+  "id":287  
+  "title": "lolo the new edition", 
+  "plot": "about lolo journy to the mountion insted galaxy", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 40000, 
+  "genres": Drama
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+}
+
+
+//Get the top 10 action movies.
+
+request
+GET http://api.movieapp.com/movies?top=10&genres='action' HTTP/1.1
+
+response
+HTTP/1.1 200 OK
+[{
+  "id":287  
+  "title": fast and farious 1", 
+  "plot": "about cars", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 200000000, 
+  "genres": action
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+
+ },
+ {
+  "id":287  
+  "title": fast and farious 2", 
+  "plot": "about cars", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 200000000, 
+  "genres": action
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+
+ },
+ {
+  "id":287  
+  "title": fast and farious 3", 
+  "plot": "about cars", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 200000000, 
+  "genres": action
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+
+ },
+ {
+  "id":287  
+  "title": fast and farious 4", 
+  "plot": "about cars", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 200000000, 
+  "genres": action
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+
+ }.......
+] 
+
+
+
+//Get the drama movies of a specific actor.
+
+request
+GET http://api.movieapp.com/actors/187/movies?genres='drama' HTTP/1.1
+
+response
+HTTP/1.1 200 OK
+[{
+  "id":287  
+  "title": "lolo the new edition", 
+  "plot": "about lolo journy to the mountion insted galaxy", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 40000, 
+  "genres": Drama
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+}]
+
+//Get the top 3 most popular movies of a specific actor.
+request
+GET http://api.movieapp.com/actors/187/movies?top=3 HTTP/1.1
+
+response
+HTTP/1.1 200 OK
+[{
+  "id":288  
+  "title": "lolo the new edition 3", 
+  "plot": "about lolo journy to the mountion insted galaxy", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 40000, 
+  "genres": Drama
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+}
+{
+  "id":288  
+  "title": "lolo the new edition 2", 
+  "plot": "about lolo journy to the mountion insted galaxy", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 40000, 
+  "genres": Drama
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+}
+{
+  "id":289  
+  "title": "lolo the new edition 1", 
+  "plot": "about lolo journy to the mountion insted galaxy", 
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2FMgaHugotNiLolo%2Fphotos%2Fd41d8cd9%2F470805253292836%2F&psig=AOvVaw0qH5ZuVVKD62xEYeV8LUQr&ust=1665561795765000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDo5Krb1_oCFQAAAAAdAAAAABAE", 
+  "budget": 1000000, 
+  "revenue": 40000, 
+  "genres": Drama
+  "popularity": 4
+  "review": 6
+  "runtime": 30000
+}]
+
+
+
+
+//Create 5 actors in a single request.
+
+POST http://api.movieapp.com/actors HTTP/1.1
+{
+    ]
+    {
+    "name": "Brad Pitt 1", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1963-12-18", 
+    "deathday": null, 
+    "gender": 2, 
+    "popularity": 9.93
+    },
+    {
+    "name": "Brad Pitt 2", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1963-12-18", 
+    "deathday": null, 
+    "gender": 2, 
+    "popularity": 9.93
+    },
+    {
+    "name": "Brad Pitt 3", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1963-12-18", 
+    "deathday": null, 
+    "gender": 2, 
+    "popularity": 9.93
+    },
+    {
+    "name": "Brad Pitt 4", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1963-12-18", 
+    "deathday": null, 
+    "gender": 2, 
+    "popularity": 9.93
+    },
+    {
+    "name": "Brad Pitt 5", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1963-12-18", 
+    "deathday": null, 
+    "gender": 2, 
+    "popularity": 9.93
+    }
+    [
+}  
+
+
+response
+HTTP/1.1 200 OK
+Location: /actors/
+{[
+    {
+    "name": "Brad Pitt 1", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1963-12-18", 
+    "deathday": null, 
+    "gender": 2, 
+    "popularity": 9.93
+    },
+    {
+    "name": "Brad Pitt 2", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1963-12-18", 
+    "deathday": null, 
+    "gender": 2, 
+    "popularity": 9.93
+    },
+    {
+    "name": "Brad Pitt 3", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1963-12-18", 
+    "deathday": null, 
+    "gender": 2, 
+    "popularity": 9.93
+    },
+    {
+    "name": "Brad Pitt 4", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1963-12-18", 
+    "deathday": null, 
+    "gender": 2, 
+    "popularity": 9.93
+    },
+    {
+    "name": "Brad Pitt 5", 
+    "bio": "William Bradley Pitt (born December 18, 1963) is…", 
+    "birthday": "1963-12-18", 
+    "deathday": null, 
+    "gender": 2, 
+    "popularity": 9.93
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
